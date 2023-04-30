@@ -1,0 +1,315 @@
+{% block subject %}Car Rental Verification Code{% endblock %}
+{% block html %}
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style type="text/css">
+        .main_container {
+            max-width: 740px;
+            height: 100%;
+            margin: 10px auto 0px auto;
+        }
+
+        .in_container {
+            background: #fafafa;
+            border-radius: 2px;
+            box-shadow: 0 0 6px #c9d1de;
+            -webkit-box-shadow: 0 0 6px #c9d1de;
+            -moz-box-shadow: 0 0 6px #c9d1de;
+            -o-box-shadow: 0 0 6px #c9d1de;
+        }
+
+        html {
+            width: 100%;
+        }
+
+        body {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+            mso-margin-top-alt: 0px;
+            mso-margin-bottom-alt: 0px;
+            mso-padding-alt: 0px 0px 0px 0px;
+            background: #eef1f2;
+            font-family: 'Poppins', Helvetica, Arial, sans-serif;
+        }
+
+        p,
+        h1,
+        h2,
+        h3,
+        h4 {
+            margin-top: 0;
+            margin-bottom: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+
+        table {
+            font-size: 14px;
+            border: 0;
+        }
+
+        img {
+            border: none !important;
+        }
+    </style>
+
+    <style type="text/css">
+        @media only screen and (max-width: 600px) {
+            body[yahoo] .full_width_600 {
+                width: 90% !important;
+            }
+        }
+
+        @media only screen and (max-width: 700px) {
+            body[yahoo] .full_width_700 {
+                width: 100% !important;
+            }
+
+            body[yahoo] .txt_center {
+                text-align: center !important;
+            }
+
+            body[yahoo] .separator {
+                height: 40px !important;
+            }
+        }
+    </style>
+
+</head>
+
+<body style="margin: 0; padding: 0;" yahoo="fix">
+
+    <div class="main_container">
+
+        <table border="0" cellpadding="0" cellspacing="0" width="100%" align="center"
+            style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+            <tr>
+                <td align="center">
+                    <table class="full_width_700" width="100%" border="0" cellpadding="0" cellspacing="0" align="center"
+                        style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; border:0;">
+                        <tr>
+                            <td height="10" width="100%" style="height:10px;"></td>
+                        </tr>
+                        <tr>
+                            <td>
+
+                                <table class="full_width_700 txt_center" width="65%" align="left" border="0"
+                                    cellpadding="0" cellspacing="0"
+                                    style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; border:0;">
+                                    <tr>
+                                        <td>
+                                            <a href="#">
+                                                <img src="https://i.imgur.com/7R3SpNn.png" alt="logo"
+                                                    title="logo" border="0" style="height: 61px;" />
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </table>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="10" width="100%" style="height:10px;"></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+
+
+        <table class="in_container" border="0" cellpadding="0" cellspacing="0" width="100%" align="center"
+            style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+            <tr>
+                <td>
+
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%" align="center" bgcolor="3d424e"
+                        style="background-size: cover; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-position: bottom center; background-repeat: no-repeat; background-color:#3d424e;border-radius:2px 2px 0px 0px;">
+                        <tr>
+                            <td height="65" width="100%" style="height:65px;"></td>
+                        </tr>
+                        <tr>
+                            <td>
+
+                                <table width="100%" border="0" cellpadding="0" cellspacing="0"
+                                    style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; border:0;">
+                                    <tr>
+                                        <td
+                                            style="text-align:center; color: #ffffff; font-size: 30px; font-weight: 600;">
+                                            Welcome To</td>
+                                    </tr>
+                                </table>
+                                <table width="100%" border="0" cellpadding="0" cellspacing="0"
+                                    style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; border:0;">
+                                    <tr>
+                                        <td align="right"
+                                            style=" text-align:center; color: #ffffff; font-size: 40px; font-weight: 700; text-transform:uppercase;line-height:30px;">
+                                            Car Rental</td>
+                                    </tr>
+                                </table>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="15" width="100%" style="height:65px;"></td>
+                        </tr>
+                    </table>
+
+
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%" align="center" bgcolor="ffffff"
+                        style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; background-color:#ffffff;">
+                        <tr>
+                            <td height="65px" width="100%" style="height:65px;"></td>
+                        </tr>
+                        <tr>
+                            <td align="center">
+                                <table class="full_width_600" width="600" border="0" cellpadding="0" cellspacing="0"
+                                    align="center"
+                                    style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; border:0;text-align:center;">
+                                    <tr>
+                                        <td>
+                                            <table width="100%" border="0" cellpadding="0" cellspacing="0"
+                                                style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; border:0;">
+                                                <tr>
+                                                    <td align="center" width="46%"
+                                                        style="width:46%; text-align:center; color: #676f84;  font-size: 35px; font-weight: 600; line-height:30px;">
+                                                        <span style="color: #F30039;">Hello!</span>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td height="15px" width="100%" style="height:25px;"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <table width="100%" border="0" cellpadding="0" cellspacing="0"
+                                                style="max-width: 400px; margin:0 auto;border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; border:0;">
+                                                <tr>
+                                                    <td
+                                                        style="text-align:left; color: #010103;  font-size: 20px; font-weight: 600; line-height: 25px;">
+                                                        Enter the following OTP to finish logging in to our system.
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td
+                                                        style="margin:0;padding:20px 0;line-height:1.6;color:#2d4f43;
+                                                        font-weight: 600;font-size:24px;text-align: center;">
+                                                        {{code}}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td
+                                                        style="text-align:left; color: #010103;  font-size: 14px; font-weight: 600; line-height: 20px;">
+                                                        Your OTP is only valid within five (5) minutes. Please do not share this code with anyone.
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="65px" width="100%" style="height:65px;"></td>
+                        </tr>
+                    </table>
+
+
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%" align="center" bgcolor="3d424e"
+                        style="background-size: cover; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-position: bottom center; background-repeat: no-repeat; background-color:#3d424e;border-radius:0px 0px 2px 2px;">
+                        <tr>
+                            <td>
+
+                                <table border="0" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                        <td>
+                                            <table width="100%" border="0" cellpadding="20" cellspacing="0"
+                                                style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; border:0;">
+                                                <tr>
+                                                    <td>
+                                                        <table width="100%" border="0" cellpadding="0" cellspacing="0"
+                                                            align="center"
+                                                            style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; border:0;">
+                                                            <tr>
+                                                                <td align="left"
+                                                                    style=" text-align:left; color: #cbd8de;  font-size: 18px; font-weight: 700;line-height:24px;letter-spacing:0.5px;">
+                                                                    Regards,</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td align="left"
+                                                                    style=" text-align:left; color: #cbd8de;  font-size: 18px; font-weight: 400;line-height:24px;letter-spacing:0.5px;">
+                                                                    Car Rental Team</td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+
+                            </td>
+                        </tr>
+                    </table>
+
+                </td>
+            </tr>
+        </table>
+
+        <table border="0" cellpadding="0" cellspacing="0" width="100%" align="center"
+            style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+            <tr>
+                <td align="center">
+                    <table class="full_width_700" border="0" cellpadding="0" cellspacing="0" align="center"
+                        style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; border:0;">
+                        <tr>
+                            <td height="30" width="100%" style="height:30px;"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <table class="full_width_700" width="100%" align="right" border="0" cellpadding="0"
+                                    cellspacing="0"
+                                    style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; border:0;">
+                                    <tr>
+                                        <td class="txt_center" style="text-align:center;">
+                                            <table class="full_width_700 txt_center" align="right" border="0"
+                                                cellpadding="0" cellspacing="0"
+                                                style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; border:0;">
+                                                <tr>
+                                                    <td
+                                                        style="color: #c9d1de;  font-size: 14px; font-weight: 400; letter-spacing:0.5px; text-transform:capitalize; text-align:center;">
+                                                        &#169; Copyright 2023
+                                                        <a href="#"
+                                                            style="color: #c9d1de;  font-size: 14px; font-weight: 600; letter-spacing:0.5px;">
+                                                            Car Rental
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="30" width="100%" style="height:30px;"></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+</body>
+
+</html>
+{% endblock %}

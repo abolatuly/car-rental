@@ -1,0 +1,339 @@
+{% block subject %}Car Rental Verification Code{% endblock %}
+{% block html %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a388be2306.js" crossorigin="anonymous" defer></script>
+
+    
+    <style type="text/css">
+        .main_container {
+            max-width: 740px;
+            height: 100%;
+            margin: 10px auto 0px auto;
+        }
+
+        .in_container {
+            background: #fafafa;
+            border-radius: 2px;
+            box-shadow: 0 0 6px #c9d1de;
+            -webkit-box-shadow: 0 0 6px #c9d1de;
+            -moz-box-shadow: 0 0 6px #c9d1de;
+            -o-box-shadow: 0 0 6px #c9d1de;
+        }
+
+        html {
+            width: 100%;
+        }
+
+        body {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+            mso-margin-top-alt: 0px;
+            mso-margin-bottom-alt: 0px;
+            mso-padding-alt: 0px 0px 0px 0px;
+            background: #eef1f2;
+            font-family: 'Poppins', Helvetica, Arial, sans-serif;
+        }
+
+        p,
+        h1,
+        h2,
+        h3,
+        h4 {
+            margin-top: 0;
+            margin-bottom: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+
+        table {
+            font-size: 14px;
+            border: 0;
+        }
+
+        img {
+            border: none !important;
+        }
+    </style>
+
+    <style type="text/css">
+        @media only screen and (max-width: 600px) {
+            body[yahoo] .full_width_600 {
+                width: 90% !important;
+            }
+        }
+
+        @media only screen and (max-width: 700px) {
+            body[yahoo] .full_width_700 {
+                width: 100% !important;
+            }
+
+            body[yahoo] .txt_center {
+                text-align: center !important;
+            }
+
+            body[yahoo] .separator {
+                height: 40px !important;
+            }
+        }
+    </style>
+
+</head>
+
+<body
+    style="width: 100%; -webkit-font-smoothing: antialiased; mso-margin-top-alt: 0px; mso-margin-bottom-alt: 0px; mso-padding-alt: 0px 0px 0px 0px; background: #eef1f2; font-family: 'Poppins', Helvetica, Arial, sans-serif; margin: 0; padding: 0;"
+    yahoo="fix">
+
+    <div class="main_container" style="max-width: 740px; height: 100%; margin: 10px auto 0px auto;">
+
+        <table border="0" cellpadding="0" cellspacing="0" width="100%" align="center"
+            style="font-size: 14px; border: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+            <tr>
+                <td align="center">
+                    <table class="full_width_700" width="100%" border="0" cellpadding="0" cellspacing="0" align="center"
+                        style="font-size: 14px; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border: 0;">
+                        <tr>
+                            <td height="10" width="100%" style="height:10px;"></td>
+                        </tr>
+                        <tr>
+                            <td>
+
+                                <table class="full_width_700 txt_center" width="65%" align="left" border="0"
+                                    cellpadding="0" cellspacing="0"
+                                    style="font-size: 14px; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border: 0;">
+                                    <tr>
+                                        <td>
+                                            <a href="#">
+                                                <img src="https://i.imgur.com/7R3SpNn.png" alt="logo" title="logo"
+                                                    border="0" style="height: 61px; border: none;" height="61">
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </table>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="10" width="100%" style="height:10px;"></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+
+
+        <table class="in_container" border="0" cellpadding="0" cellspacing="0" width="100%" align="center"
+            style="font-size: 14px; border: 0; background: #fafafa; border-radius: 2px; box-shadow: 0 0 6px #c9d1de; -webkit-box-shadow: 0 0 6px #c9d1de; -moz-box-shadow: 0 0 6px #c9d1de; -o-box-shadow: 0 0 6px #c9d1de; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+            <tr>
+                <td>
+
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%" align="center" bgcolor="#3d424e"
+                        style="font-size: 14px; border: 0; background-size: cover; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-position: bottom center; background-repeat: no-repeat; background-color: #3d424e; border-radius: 2px 2px 0px 0px;">
+                        <tr>
+                            <td height="65" width="100%" style="height:65px;"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <table width="100%" border="0" cellpadding="0" cellspacing="0"
+                                    style="font-size: 14px; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border: 0;">
+                                    <tr>
+                                        <td align="right"
+                                            style=" text-align:center; color: #ffffff; font-size: 40px; font-weight: 700;">
+                                            Order Confirmation</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="right"
+                                            style=" text-align:center; color: #ffffff; font-size: 20px; font-weight: 700;">
+                                            #{{order_number}}</td>
+                                    </tr>
+                                </table>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="15" width="100%" style="height:65px;"></td>
+                        </tr>
+                    </table>
+
+
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%" align="center" bgcolor="#ffffff"
+                        style="font-size: 14px; border: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #ffffff;">
+                        <tr>
+                            <td height="65px" width="100%" style="height:35px;"></td>
+                        </tr>
+                        <tr>
+                            <td align="center">
+                                <table class="full_width_600" width="600" border="0" cellpadding="0" cellspacing="0"
+                                    style="font-size: 14px; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border: 0;">
+                                    <tr>
+                                        <td>
+                                            <table width="100%" border="0" cellpadding="0" cellspacing="0"
+                                                style="font-size: 14px; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border: 0;">
+                                                <tr>
+
+
+
+
+                                                    <div
+                                                        style="background-color: #fff; box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; color: #010103;">
+                                                        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                                            <tr>
+                                                                <td valign="top" style="padding: 20px 0; width: 35%;">
+                                                                    <h4 style="color: #F30039; margin-bottom: 10px; font-size: 1.5rem;">
+                                                                        Location &amp; Date</h4>
+                                                                    <div
+                                                                        style="display: flex; align-items: baseline; ">
+                                                                        <div style="margin-left: 10px;">
+                                                                            <h6 style="margin-bottom: 5px; font-size: 1rem;">Pick-Up Date
+                                                                            </h6>
+                                                                            <p style="margin: 0;">{{pick_up_date}}</p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div
+                                                                        style="display: flex; align-items: baseline; ">
+                                                                        <div style="margin-left: 10px;">
+                                                                            <h6 style="margin-bottom: 5px; font-size: 1rem;">Drop-Off
+                                                                                Date</h6>
+                                                                            <p style="margin: 0;">{{drop_off_date}}</p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div
+                                                                        style="display: flex; align-items: baseline; ">
+                                                                        <div style="margin-left: 10px;">
+                                                                            <h6 style="margin-bottom: 5px; font-size: 1rem;">Pick-Up
+                                                                                Location</h6>
+                                                                            <p style="margin: 0;">{{pick_up_location}}</p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div style="display: flex; align-items: baseline;">
+                                                                        <div style="margin-left: 10px;">
+                                                                            <h6 style="margin-bottom: 5px; font-size: 1rem;">Drop-Off
+                                                                                Location</h6>
+                                                                            <p style="margin: 0;">{{drop_off_location}}</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td valign="top" style="padding: 20px 0; width: 50%;">
+                                                                    <h4 style="margin: 0 10px 25px 0; font-size: 1.5rem;">
+                                                                        Car - <span style="color: #F30039; ">{{car}}</span></h4>
+                                                                    <div style="display: flex; align-items: center;">
+                                                                        <img src="https://i.imgur.com/vRtYrow.jpeg"
+                                                                            alt="car_img" style="width: 100%;">
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+
+
+
+
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="65px" width="100%" style="height:35px; background-color: #fff;"></td>
+                        </tr>
+                    </table>
+
+
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%" align="center" bgcolor="#3d424e"
+                        style="font-size: 14px; border: 0; background-size: cover; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-position: bottom center; background-repeat: no-repeat; background-color: #3d424e; border-radius: 0px 0px 2px 2px;">
+                        <tr>
+                            <td>
+
+                                <table border="0" cellpadding="0" cellspacing="0" style="font-size: 14px; border: 0;">
+                                    <tr>
+                                        <td>
+                                            <table width="100%" border="0" cellpadding="20" cellspacing="0"
+                                                style="font-size: 14px; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border: 0;">
+                                                <tr>
+                                                    <td>
+                                                        <table width="100%" border="0" cellpadding="0" cellspacing="0"
+                                                            align="center"
+                                                            style="font-size: 14px; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border: 0;">
+                                                            <tr>
+                                                                <td align="left"
+                                                                    style=" text-align:left; color: #cbd8de;  font-size: 18px; font-weight: 700;line-height:24px;letter-spacing:0.5px;">
+                                                                    Regards,</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td align="left"
+                                                                    style=" text-align:left; color: #cbd8de;  font-size: 18px; font-weight: 400;line-height:24px;letter-spacing:0.5px;">
+                                                                    Car Rental Team</td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+
+                            </td>
+                        </tr>
+                    </table>
+
+                </td>
+            </tr>
+        </table>
+
+        <table border="0" cellpadding="0" cellspacing="0" width="100%" align="center"
+            style="font-size: 14px; border: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+            <tr>
+                <td align="center">
+                    <table class="full_width_700" border="0" cellpadding="0" cellspacing="0" align="center"
+                        style="font-size: 14px; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border: 0;">
+                        <tr>
+                            <td height="30" width="100%" style="height:30px;"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <table class="full_width_700" width="100%" align="right" border="0" cellpadding="0"
+                                    cellspacing="0"
+                                    style="font-size: 14px; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border: 0;">
+                                    <tr>
+                                        <td class="txt_center" style="text-align:center;">
+                                            <table class="full_width_700 txt_center" align="right" border="0"
+                                                cellpadding="0" cellspacing="0"
+                                                style="font-size: 14px; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border: 0;">
+                                                <tr>
+                                                    <td
+                                                        style="color: #c9d1de;  font-size: 14px; font-weight: 400; letter-spacing:0.5px; text-transform:capitalize; text-align:center;">
+                                                        &#169; Copyright 2023
+                                                        <a href="#"
+                                                            style="color: #c9d1de;  font-size: 14px; font-weight: 600; letter-spacing:0.5px;">
+                                                            Car Rental
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="30" width="100%" style="height:30px;"></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+</body>
+
+</html>
+{% endblock %}
