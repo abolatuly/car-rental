@@ -189,7 +189,7 @@
                                                                         Location &amp; Date</h4>
                                                                     <div
                                                                         style="display: flex; align-items: baseline; ">
-                                                                        <div style="margin-left: 10px;">
+                                                                        <div>
                                                                             <h6 style="margin-bottom: 5px; font-size: 1rem;">Pick-Up Date
                                                                             </h6>
                                                                             <p style="margin: 0;">{{pick_up_date}}</p>
@@ -197,7 +197,7 @@
                                                                     </div>
                                                                     <div
                                                                         style="display: flex; align-items: baseline; ">
-                                                                        <div style="margin-left: 10px;">
+                                                                        <div>
                                                                             <h6 style="margin-bottom: 5px; font-size: 1rem;">Drop-Off
                                                                                 Date</h6>
                                                                             <p style="margin: 0;">{{drop_off_date}}</p>
@@ -205,14 +205,14 @@
                                                                     </div>
                                                                     <div
                                                                         style="display: flex; align-items: baseline; ">
-                                                                        <div style="margin-left: 10px;">
+                                                                        <div>
                                                                             <h6 style="margin-bottom: 5px; font-size: 1rem;">Pick-Up
                                                                                 Location</h6>
                                                                             <p style="margin: 0;">{{pick_up_location}}</p>
                                                                         </div>
                                                                     </div>
                                                                     <div style="display: flex; align-items: baseline;">
-                                                                        <div style="margin-left: 10px;">
+                                                                        <div>
                                                                             <h6 style="margin-bottom: 5px; font-size: 1rem;">Drop-Off
                                                                                 Location</h6>
                                                                             <p style="margin: 0;">{{drop_off_location}}</p>
