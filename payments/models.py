@@ -11,7 +11,7 @@ class Bill(models.Model):
         to='orders.Order',
         on_delete=models.SET_NULL,
         null=True,
-        related_name='bills',
+        related_name='bill',
     )
     total = models.DecimalField(max_digits=14, decimal_places=2)
     number = models.CharField(max_length=10, unique=True)

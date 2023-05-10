@@ -1,8 +1,9 @@
-from rest_framework import status
+from rest_framework import status, permissions
 from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet
-from . import models, serializers, services
-from utils import mixins
+
+from . import models, pagination, serializers, services
+from mixins import mixins
 
 
 class OrderItemViewSet(ModelViewSet):
@@ -16,7 +17,12 @@ class OrderViewSet(mixins.ActionSerializerMixin, ModelViewSet):
     }
     order_services: services.OrderServicesInterface = services.OrderServicesV1()
     serializer_class = serializers.OrderSerializer
-    queryset = order_services.get_orders()
+    # pagination_class = pagination.CustomPageNumberPagination
+    pagination_class = None
+    permission_classes = permissions.IsAuthenticated,
+
+    def get_queryset(self):
+        return self.order_services.get_orders(user=self.request.user)
 
     def create(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
@@ -26,3 +32,15 @@ class OrderViewSet(mixins.ActionSerializerMixin, ModelViewSet):
 
         data = serializers.OrderSerializer(order).data
         return Response(data, status=status.HTTP_201_CREATED)
+
+    def complete_order(self, request, *args, **kwargs):
+        data = self.order_services.complete_order(order_id=kwargs['order_id'], user=request.user)
+        if data:
+            return data
+
+        return Response(status=status.HTTP_200_OK)
+
+    def cancel_order(self, request, *args, **kwargs):
+        self.order_services.cancel_order(order_id=kwargs['order_id'], user=request.user)
+
+        return Response(status=status.HTTP_200_OK)

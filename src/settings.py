@@ -13,7 +13,7 @@ environ.Env.read_env(BASE_DIR / '.env', overwrite=True)
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-)mixb=3u5p0w-qyd_fbnirpx!ofbupk37y9x-@0s=c%p4d-sq('
+SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -47,7 +47,8 @@ INSTALLED_APPS = [
     'users',
     'rental_centers',
     'orders',
-    'payments'
+    'payments',
+    'damage_detection',
 ]
 
 MIDDLEWARE = [
@@ -151,6 +152,8 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+    'PAGE_SIZE': 100,
 }
 
 SIMPLE_JWT = {

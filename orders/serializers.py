@@ -1,5 +1,7 @@
 from rest_framework import serializers
+
 from . import models
+from cars import serializers as cars_serializers
 
 
 class _CreateOrderItemSerializer(serializers.ModelSerializer):
@@ -25,6 +27,7 @@ class CreateOrderSerializer(serializers.ModelSerializer):
 
 
 class OrderItemSerializer(serializers.ModelSerializer):
+    car = cars_serializers.CarSerializer()
 
     class Meta:
         model = models.OrderItem

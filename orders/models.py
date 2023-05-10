@@ -1,4 +1,5 @@
 import random
+import uuid
 
 from django.contrib.auth import get_user_model
 from django.db import models
@@ -7,6 +8,7 @@ from orders import choices
 
 
 class Order(models.Model):
+    id = models.UUIDField(default=uuid.uuid4, primary_key=True)
     user = models.ForeignKey(
         to=get_user_model(),
         on_delete=models.PROTECT,

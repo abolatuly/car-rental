@@ -1,5 +1,5 @@
 from rest_framework.viewsets import ModelViewSet
-from utils import mixins
+from mixins import mixins
 from . import serializers, models, permissions
 
 

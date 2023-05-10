@@ -1,6 +1,6 @@
 from rest_framework.viewsets import ModelViewSet
 from . import serializers, permissions, services
-from utils import mixins
+from mixins import mixins
 
 
 class CarViewSet(mixins.ActionSerializerMixin, ModelViewSet):
