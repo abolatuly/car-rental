@@ -1,0 +1,296 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/payment.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>My Account</title>
+{% endblock %}
+
+{% block content %}
+        <section class="account-page">
+            <section class="hero-pages">
+                <div class="hero-pages__overlay"></div>
+                <div class="container">
+                    <div class="hero-pages__text">
+                        <h3>My account</h3>
+                        <p>
+                            <a href="{% url 'index' %}">Home</a> / Account
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <div class="container">
+                <div onclick="closeModal();" class="modal-overlay"></div>
+
+                <div class="row order_sorter">
+                    <ul id="toggle-orders">
+                        <li class="oh selected"> <a href="#">Order History</a> </li>
+                    </ul>
+                </div>
+
+                <div class="orders_list">
+                    <template class="order_item--template">
+                        <div class="row" id="order-history">
+                            <div class="order-container">
+
+                                <div class="header">
+                                    <div>
+                                        <span>ORDERS PLACED</span>
+                                        <span class="order_date"></span>
+                                    </div>
+                                    <div>
+                                        <span>TOTAL</span>
+                                        <span class="order_total">$150.50</span>
+                                    </div>
+                                    <div>
+                                        <span>ORDER</span>
+                                        <span class="order_number">791075</span>
+                                    </div>
+                                </div>
+
+                                <div class="order-content">
+                                    <div class="order-content__img">
+                                        <img src="{% static 'images/cars-big/Audi A1 S-Line.jpg' %}" alt="car_img">
+                                    </div>
+                                    <div class="order-content__title">
+                                        <span class="product-title">
+                                            Audi A1 S-Line
+                                        </span>
+                                    </div>
+                                    <div class="order-content__details">
+                                        <p class="order-content__order-status">Order Status: <span>Delivered</span></p>
+                                        <p class="order-content__pickup">Pick-up date: <span>17.04.2023</span></p>
+                                        <p class="order-content__dropoff">Drop-off date: <span>27.04.2023</span></p>
+                                    </div>
+                                    <div class="order-content__buttons">
+                                        <a href="#" class="btn-default" id="order-pay">
+                                            <i class="fa-regular fa-credit-card"></i>
+                                            Pay
+                                        </a>
+                                        <a href="#" class="btn-default" id="turn-in">
+                                            <i class="fa fa-truck" aria-hidden="true"></i>
+                                            Turn in
+                                        </a>
+                                        <a href="#" class="btn-default" id="order-cancel">
+                                            <i class="fa fa-remove" aria-hidden="true"></i>
+                                            Cancel
+                                        </a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </template>
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination">
+                    <div class="pages">
+                        <ul>
+                            <!-- Number of pages-->
+                        </ul>
+                    </div>
+                    <div class="center">
+                        <ul>
+                            <!-- Number of pages to be highlighed-->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="turn-in-modal">
+            <div class="booking-modal__title">
+                <h2>Car Condition Check Form</h2>
+                <i onclick="closeModal();" class="fa-solid fa-xmark"></i>
+            </div>
+            <div class="booking-modal__message">
+                <p>
+                    <i class="fa-solid fa-circle-info"></i>
+                    Please take and upload pictures of the car from each side. This will help us assess the
+                    overall condition of the vehicle. We appreciate your cooperation in ensuring the accuracy
+                    of our records.
+                </p>
+            </div>
+
+
+            <div class="turn-in__container">
+                <div class="turn-in__group">
+                    <img class="turn-in__img" src="{% static 'images/turn-in/car-above.png' %}" alt="car">
+                    <form class="turn-in__form" method="POST">
+                        {% csrf_token %}
+                        <div class="turn-in__form-row">
+                            <input type="file" class="turn-in__card" name="front_image" accept="image/*" required>
+                            <label>
+                                <img src="{% static 'images/turn-in/camera.png' %}" alt="Camera icon">
+                                <span class="label-text">Choose a file</span>
+                            </label>
+                        </div>
+                        <div class="turn-in__form-row">
+                            <div class="row_block">
+                                <input type="file" class="turn-in__card" name="left_image" accept="image/*" required>
+                                <label>
+                                    <img src="{% static 'images/turn-in/camera.png' %}" alt="Camera icon">
+                                    <span class="label-text">Choose a file</span>
+                                </label>
+                            </div>
+                            <div class="row_block">
+                                <input type="file" class="turn-in__card" name="right_image" accept="image/*" required>
+                                <label>
+                                    <img src="{% static 'images/turn-in/camera.png' %}" alt="Camera icon">
+                                    <span class="label-text">Choose a file</span>
+                                </label>
+                            </div>
+
+                        </div>
+                        <div class="turn-in__form-row">
+                            <input type="file" class="turn-in__card" name="back_image" accept="image/*" required>
+                            <label>
+                                <img src="{% static 'images/turn-in/camera.png' %}" alt="Camera icon">
+                                <span class="label-text">Choose a file</span>
+                            </label>
+                        </div>
+
+                        <div class="turn-in__button">
+                            <button type="submit" name="registration_button">Turn In</button>
+                        </div>
+                    </form>
+                </div>
+                <img class="turn-in__map" src="{% static 'images/turn-in/map.svg' %}" alt="map">
+            </div>
+        </div>
+
+        <!-- Payment modal -->
+    <div class="payment-modal">
+        <div class="booking-modal__title">
+          <h2>Complete Reservation</h2>
+          <i onclick="closeModal();" class="fa-solid fa-xmark"></i>
+        </div>
+        <!-- Card -->
+        <div class="payment-modal__card">
+          <div class="card">
+            <div class="card__info">
+              <div class="card__logo">MasterCard</div>
+              <div class="card__chip">
+                <svg class="card__chip-lines" role="img" width="20px" height="20px" viewBox="0 0 100 100"
+                  aria-label="Chip">
+                  <g opacity="0.8">
+                    <polyline points="0,50 35,50" fill="none" stroke="#000" stroke-width="2">
+                    </polyline>
+                    <polyline points="0,20 20,20 35,35" fill="none" stroke="#000" stroke-width="2">
+                    </polyline>
+                    <polyline points="50,0 50,35" fill="none" stroke="#000" stroke-width="2">
+                    </polyline>
+                    <polyline points="65,35 80,20 100,20" fill="none" stroke="#000" stroke-width="2">
+                    </polyline>
+                    <polyline points="100,50 65,50" fill="none" stroke="#000" stroke-width="2">
+                    </polyline>
+                    <polyline points="35,35 65,35 65,65 35,65 35,35" fill="none" stroke="#000" stroke-width="2">
+                    </polyline>
+                    <polyline points="0,80 20,80 35,65" fill="none" stroke="#000" stroke-width="2">
+                    </polyline>
+                    <polyline points="50,100 50,65" fill="none" stroke="#000" stroke-width="2">
+                    </polyline>
+                    <polyline points="65,65 80,80 100,80" fill="none" stroke="#000" stroke-width="2">
+                    </polyline>
+                  </g>
+                </svg>
+                <div class="card__chip-texture"></div>
+              </div>
+              <div class="card__type">debit</div>
+              <div class="card__number">
+                <span class="card__digit-group">0123</span>
+                <span class="card__digit-group">4567</span>
+                <span class="card__digit-group">8901</span>
+                <span class="card__digit-group">2345</span>
+              </div>
+              <div class="card__valid-thru" aria-label="Valid thru">Valid<br>thru</div>
+              <div class="card__exp-date"><time datetime="2038-01">01/38</time></div>
+              <div class="card__name" aria-label="Dee Stroyer">First Last</div>
+              <div class="card__vendor" role="img" aria-labelledby="card-vendor">
+                <span id="card-vendor" class="card__vendor-sr">Mastercard</span>
+              </div>
+              <div class="card__texture"></div>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Payment info -->
+        <div class="payment-modal__person-info">
+          <h4>Payment Information</h4>
+          <form class="payment-form" method="POST">
+            {% csrf_token %}
+            <div class="info-form__1col">
+              <span>
+                <label for="cardnumber_field">
+                  Card Number <b>*</b>
+                </label>
+                <input type="text" name="cardnumber_field" placeholder="0000 0000 0000 0000" minlength="19" maxlength="19"
+                  id="cardnumber_field" required></input>
+                <p class="error-modal">This field is required.</p>
+              </span>
+            </div>
+  
+            <div class="info-form__2col">
+              <span>
+                <label for="expiry_field">
+                  Expiry Date <b>*</b>
+                </label>
+                <input type="text" name="expiry_field" placeholder="MM/YY" title="MM/YY" pattern="[0-9]{2}/[0-9]{2}"
+                  maxlength="5" id="expiry_field" required></input>
+                <p class="error-modal">This field is required.</p>
+              </span>
+  
+              <span>
+                <label for="cvv_field">
+                  CVV Number <b>*</b>
+                </label>
+                <input type="password" name="cvv_field" placeholder="Card CVV" title="Only numbers" maxlength="3"
+                  pattern="[0-9]{3}" id="cvv_field" required></input>
+                <p class="error-modal ">This field is required.</p>
+              </span>
+            </div>
+  
+            <div class="reserve-button">
+              <p class="total-price">
+                <!-- Total Price -->
+              </p>
+              <button type="submit" name="payment_button">Checkout</button>
+            </div>
+          </form>
+        </div>
+    </div>
+
+    <div class="payment-confirmation" style="min-width: 374px;">
+        <div class="payment-confirmation__inner">
+            <div class="payment-confirmation__image" style="background-color: transparent;">
+            <?xml version="1.0" encoding="iso-8859-1"?>
+            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                    viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+            <circle style="fill:#D75A4A;" cx="25" cy="25" r="25"/>
+            <polyline style="fill:none;stroke:#FFFFFF;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10;" points="16,34 25,25 34,16 
+                "/>
+            <polyline style="fill:none;stroke:#FFFFFF;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10;" points="16,16 25,25 34,34 
+                "/>
+            <g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g><g></g><g></g><g></g>
+            </svg>
+            
+            </div>
+            <div class="payment-confirmation__content">
+            <span class="payment-confirmation__title" style="color: #F30039;">Error</span>
+            <p class="payment-confirmation__message">Error</p>
+            </div>
+            <div class="payment-confirmation__actions">
+            <button class="payment-confirmation__button" style="background-color: #F30039;" type="button">Confirm</button>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block javascript %}
+    <script src="{% static 'js/base.js' %}"></script>
+    <script src="{% static 'js/account.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <title>Reviews</title>
+{% endblock %}
+
+
+{% block content %}
+        <section class="testimonial-page">
+            <section class="hero-pages">
+                <div class="hero-pages__overlay"></div>
+                <div class="container">
+                    <div class="hero-pages__text">
+                        <h3>Reviews</h3>
+                        <p>
+                            <a href="{% url 'index' %}">Home</a> / Reviews
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="testimonials-section">
+                <div class="container">
+                    <div class="testimonials-content">
+                        <div class="testimonials-content__title">
+                            <h4>Reviewed by People</h4>
+                            <h2>Client's Testimonials</h2>
+                            <p>
+                                Discover the positive impact we've made on the our clients by
+                                reading through their testimonials. Our clients have experienced
+                                our service and results, and they're eager to share their
+                                positive experiences with you.
+                            </p>
+                        </div>
+
+                        <div class="all-testimonials">
+                            <div class="all-testimonials__box">
+                                <span class="quotes-icon">
+                                    <i class="fa-solid fa-quote-right"></i>
+                                </span>
+                                <p>
+                                    "We rented a car from this website and had an amazing
+                                    experience! The booking was easy and the rental rates were
+                                    very affordable. "
+                                </p>
+                                <div class="all-testimonials__box__name">
+                                    <div class="all-testimonials__box__name__profile">
+                                        <img src="{% static 'images/testimonials/pfp1.jpg' %}" alt="user_img" />
+                                        <span>
+                                            <h4>Parry Hotter</h4>
+                                            <p>Belgrade</p>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="all-testimonials__box box-2">
+                                <span class="quotes-icon">
+                                    <i class="fa-solid fa-quote-right"></i>
+                                </span>
+                                <p>
+                                    "The car was in great condition and made our trip even better.
+                                    Highly recommend for this car rental website!"
+                                </p>
+                                <div class="all-testimonials__box__name">
+                                    <div class="all-testimonials__box__name__profile">
+                                        <img src="{% static 'images/testimonials/pfp2.jpg' %}" alt="user_img" />
+                                        <span>
+                                            <h4>Ron Rizzly</h4>
+                                            <p>Novi Sad</p>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="book-banner">
+                <div class="book-banner__overlay"></div>
+                <div class="container">
+                    <div class="text-content">
+                        <h2>Book a car by getting in touch with us</h2>
+                        <span>
+                            <i class="fa-solid fa-phone"></i>
+                            <h3>(123) 456-7869</h3>
+                        </span>
+                    </div>
+                </div>
+            </div>
+{% endblock %}
+
+{% block javascript %}
+    <script src="{% static 'js/base.js' %}"></script>
+{% endblock %}

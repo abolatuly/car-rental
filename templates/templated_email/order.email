@@ -1,4 +1,4 @@
-{% block subject %}Car Rental Verification Code{% endblock %}
+{% block subject %}Car Rental Order Confirmation{% endblock %}
 {% block html %}
 <!DOCTYPE html>
 <html>

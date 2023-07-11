@@ -10,4 +10,3 @@ class CarViewSet(mixins.ActionSerializerMixin, ModelViewSet):
     car_services: services.CarServicesInterface = services.CarServicesV1()
     serializer_class = serializers.CarSerializer
     queryset = car_services.get_cars()
-    permission_classes = permissions.IsAdminOrReadOnly,

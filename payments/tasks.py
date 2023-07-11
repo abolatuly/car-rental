@@ -2,6 +2,7 @@ import uuid
 import logging
 from celery import shared_task
 from payments import models, choices
+from orders import choices as orders_choices
 
 
 logger = logging.getLogger(__name__)
@@ -16,6 +17,10 @@ def check_bill_expires_at(bill_id: uuid.UUID) -> None:
         )
         bill.status = choices.BillStatusChoices.Expired
         bill.save()
+
+        bill.order.status = orders_choices.OrderStatusChoices.Cancel
+        bill.order.save()
+
         logger.info(f'Bill with id {bill_id} set status "EXPIRED"')
     except models.Bill.DoesNotExist:
         logger.error(f'Bill with id {bill_id} not found')

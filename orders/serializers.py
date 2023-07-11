@@ -39,4 +39,4 @@ class OrderSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.Order
-        fields = ('status', 'user', 'number', 'order_item')
+        fields = ('id', 'status', 'user', 'number', 'order_item')

@@ -57,7 +57,7 @@ class OrderReposV1:
                 drop_off_location=order_item[0]['drop_off_location'],
                 pick_up_date=order_item[0]['pick_up_date'],
                 drop_off_date=order_item[0]['drop_off_date'],
-                amount=num_days * order_item[0]['car'].amount
+                amount=(num_days + 1) * order_item[0]['car'].amount
             )
 
             bill = payment_models.Bill.objects.create(
@@ -118,8 +118,6 @@ class OrderReposV1:
                     Q(order_item__pick_up_date__gt=timezone.now())
                 )
             )
-            order.status = choices.OrderStatusChoices.Cancel
-            order.save()
 
             bill = payment_models.Bill.objects.get(
                 order=order
@@ -130,6 +128,9 @@ class OrderReposV1:
             else:
                 bill.status = payment_choices.BillStatusChoices.Expired
                 bill.save()
+
+            order.status = choices.OrderStatusChoices.Cancel
+            order.save()
 
 
 

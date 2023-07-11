@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>About Us</title>
+{% endblock %}
+
+{% block content %}
+        <section class="about-page">
+            <section class="hero-pages">
+                <div class="hero-pages__overlay"></div>
+                <div class="container">
+                    <div class="hero-pages__text">
+                        <h3>About</h3>
+                        <p>
+                            <a href="{% url 'index' %}">Home</a> / About
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <div class="container">
+                <div class="about-main">
+                    <img class="about-main__img" src="{%static 'images/about/about-main.jpg' %}"
+                         alt="car-renting" />
+                    <div class="about-main__text">
+                        <h3>About Company</h3>
+                        <h2>You start the engine and your adventure begins</h2>
+                        <p>
+                            Certain but she but shyness why cottage. Guy the put instrument
+                            sir entreaties affronting. Pretended exquisite see cordially the
+                            you. Weeks quiet do vexed or whose. Motionless if no to
+                            affronting imprudence no precaution. My indulged as disposal
+                            strongly attended.
+                        </p>
+                        <div class="about-main__text__icons">
+                            <div class="about-main__text__icons__box">
+                                <img src="{% static 'images/about/icon1.png' %}" alt="car-icon" />
+                                <span>
+                                    <h4>20</h4>
+                                    <p>Car Types</p>
+                                </span>
+                            </div>
+                            <div class="about-main__text__icons__box">
+                                <img src="{% static 'images/about/icon2.png' %}" alt="car-icon" />
+                                <span>
+                                    <h4>85</h4>
+                                    <p>Rental Outlets</p>
+                                </span>
+                            </div>
+                            <div class="about-main__text__icons__box">
+                                <img src="{% static 'images/about/icon3.png' %}" alt="car-icon" class="last-fk" />
+                                <span>
+                                    <h4>75</h4>
+                                    <p>Repair Shop</p>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <section class="plan-section">
+                  <div class="container">
+                    <div class="plan-container">
+                      <div class="plan-container__title">
+                        <h3>Plan your trip now</h3>
+                        <h2>Quick & easy car rental</h2>
+                      </div>
+
+                      <div class="plan-container__boxes">
+                        <div class="plan-container__boxes__box">
+                          <img src="{% static 'images/plan/icon1.png' %}" alt="icon_img" />
+                          <h3>Select Car</h3>
+                          <p>
+                            We offers a big range of vehicles for all your driving needs.
+                            We have the perfect car to meet your needs
+                          </p>
+                        </div>
+
+                        <div class="plan-container__boxes__box">
+                          <img src="{% static 'images/plan/icon2.png' %}" alt="icon_img" />
+                          <h3>Contact Operator</h3>
+                          <p>
+                            Our knowledgeable and friendly operators are always ready to
+                            help with any questions or concerns
+                          </p>
+                        </div>
+
+                        <div class="plan-container__boxes__box">
+                          <img src="{% static 'images/plan/icon3.png' %}" alt="icon_img" />
+                          <h3>Let's Drive</h3>
+                          <p>
+                            Whether you're hitting the open road, we've got you covered
+                            with our wide range of cars
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+
+            </div>
+        </section>
+        <div class="book-banner">
+            <div class="book-banner__overlay"></div>
+            <div class="container">
+                <div class="text-content">
+                    <h2>Book a car by getting in touch with us</h2>
+                    <span>
+                        <i class="fa-solid fa-phone"></i>
+                        <h3>(123) 456-7869</h3>
+                    </span>
+                </div>
+            </div>
+        </div>
+{% endblock %}
+
+{% block javascript %}
+    <script src="{% static 'js/base.js' %}"></script>
+{% endblock %}

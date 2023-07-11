@@ -17,8 +17,7 @@ class OrderViewSet(mixins.ActionSerializerMixin, ModelViewSet):
     }
     order_services: services.OrderServicesInterface = services.OrderServicesV1()
     serializer_class = serializers.OrderSerializer
-    # pagination_class = pagination.CustomPageNumberPagination
-    pagination_class = None
+    pagination_class = pagination.CustomPageNumberPagination
     permission_classes = permissions.IsAuthenticated,
 
     def get_queryset(self):

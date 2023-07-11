@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <title>Our Team</title>
+{% endblock %}
+{% block content %}
+        <section class="team-page">
+
+            <section class="hero-pages">
+                <div class="hero-pages__overlay"></div>
+                <div class="container">
+                    <div class="hero-pages__text">
+                        <h3>Team</h3>
+                        <p>
+                            <a href="{% url 'index' %}">Home</a> / Team
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <div class="cotnainer">
+                <div class="team-container">
+
+                    <!-- Person 1 -->
+                    <div class="team-container__box">
+                        <div class="team-container__box__img-div">
+                            <img src="{% static 'images/team/1.png' %}" alt="team_img" />
+                        </div>
+                        <div class="team-container__box__descr">
+                            <h3>Saul Goodman</h3>
+                            <p>Salesman</p>
+                        </div>
+                    </div>
+
+                    <!-- Person 2 -->
+                    <div class="team-container__box">
+                        <div class="team-container__box__img-div">
+                            <img src="{% static 'images/team/2.png' %}" alt="team_img" />
+                        </div>
+                        <div class="team-container__box__descr">
+                            <h3>Gus</h3>
+                            <p>Businesss Owner</p>
+                        </div>
+                    </div>
+
+                    <!-- Person 3 -->
+                    <div class="team-container__box">
+                        <div class="team-container__box__img-div">
+                            <img src="{% static 'images/team/3.png' %}" alt="team_img" />
+                        </div>
+                        <div class="team-container__box__descr">
+                            <h3>Daniel Morales</h3>
+                            <p>Car Detailist</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="book-banner">
+                <div class="book-banner__overlay"></div>
+                <div class="container">
+                    <div class="text-content">
+                        <h2>Book a car by getting in touch with us</h2>
+                        <span>
+                            <i class="fa-solid fa-phone"></i>
+                            <h3>(123) 456-7869</h3>
+                        </span>
+                    </div>
+                </div>
+            </div>
+{% endblock %}
+
+{% block javascript %}
+    <script src="{% static 'js/base.js' %}"></script>
+{% endblock %}

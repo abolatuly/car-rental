@@ -39,7 +39,8 @@ class DamageDetectionReposV1:
                 order_models.Order.objects.filter(
                     id=order_id,
                     user=user,
-                    status=order_choices.OrderStatusChoices.Paid
+                    status=order_choices.OrderStatusChoices.Paid,
+                    order_item__pick_up_date__lte=timezone.now(),
                 )
             )
             left_image = data.get('left_image')
@@ -48,7 +49,8 @@ class DamageDetectionReposV1:
             back_image = data.get('back_image')
 
             # Damage Detection feature
-            damage_found = DamageDetectionReposV1._check_damage([left_image, right_image, front_image, back_image])
+            damage_found = DamageDetectionReposV1._check_damage([left_image, right_image, front_image, back_image],
+                                                                user.email)
 
             # Fine fee calculation for the overuse time
             overuse = (timezone.now().date() - order.order_item.drop_off_date).days
@@ -74,6 +76,8 @@ class DamageDetectionReposV1:
                     total=total_fine_fee,
                     number=payment_models.Bill.generate_number()
                 )
+                order.order_item.amount += total_fine_fee
+                order.order_item.save()
 
             try:
                 car_damage = models.DamageDetection.objects.create(
@@ -100,7 +104,7 @@ class DamageDetectionReposV1:
             return detection
 
     @classmethod
-    def _check_damage(cls, images) -> dict:
+    def _check_damage(cls, images, user_email) -> dict:
         path_weightfile = os.path.join('static/', 'model/yolov5s.pt')
         model = torch.hub.load('ultralytics/yolov5', 'custom', path_weightfile)
         model.eval()

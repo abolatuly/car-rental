@@ -1,0 +1,882 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block styles %}
+  <link rel="stylesheet" href="{% static 'css/payment.css' %}">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+  <title>Car Rental</title>
+{% endblock %}
+
+{% block content %}
+    <!-- Registration modal -->
+    <div class="registration-modal">
+      <div class="registration-modal__title">
+        <h2>Registration</h2>
+        <i onclick="closeModal();" class="fa-solid fa-xmark"></i>
+      </div>
+
+      <div class="registration-modal__message">
+        <h4>
+          <i class="fa-solid fa-circle-info"></i>
+          <span></span>
+        </h4>
+      </div>
+
+      <!-- Personal info -->
+      <div class="registration-modal__person-info">
+        <h4>Personal Information</h4>
+        <form class="info-form" action="" method="post">
+          
+          <div class="info-form__2col">
+            <span>
+              <label for="first_name">
+                First Name <b>*</b>
+              </label>
+              <input id="first_name" type="text" name="first_name" placeholder="Enter your first name" required></input>
+              <p class="error-modal">This field is required.</p>
+            </span>
+
+            <span>
+              <label for="last_name">
+                Last Name <b>*</b>
+              </label>
+              <input id="last_name" type="text" name="last_name" placeholder="Enter your last name" required></input>
+              <p class="error-modal ">This field is required.</p>
+            </span>
+
+            <span>
+              <label for="phone_number">
+                Phone Number <b>*</b>
+              </label>
+              <input title="numbers only" id="phone_number" type="tel" name="phone_number"
+                placeholder="Enter your phone number" value="+7" minlength="10" maxlength="14" pattern="\+\d*" required></input>
+              <p class="error-modal">This field is required.</p>
+            </span>
+
+            <span>
+              <label for="date-of-birth">
+                Date of Birth <b>*</b>
+              </label>
+              <input id="date-of-birth" type="date" name="date_of_birth" required></input>
+              <p class="error-modal ">This field is required.</p>
+            </span>
+          </div>
+
+          <div class="info-form__1col">
+            <span>
+              <label for="email">
+                Email <b>*</b>
+              </label>
+              <input id="email" type="email" placeholder="Enter your email address" name="email" required></input>
+              <p class="error-modal">This field is required.</p>
+            </span>
+          </div>
+
+          <div class="info-form__2col">
+            <span>
+              <label for="driver_lic-front">
+                Driver license (front) <b>*</b>
+              </label>
+              <input id="driver_lic-front" type="file" name="driver_lic-front" accept="image/*" required></input>
+              <p class="error-modal">This field is required.</p>
+            </span>
+
+            <span>
+              <label for="driver_lic-back">
+                Driver license (back) <b>*</b>
+              </label>
+              <input id="driver_lic-back" type="file" name="driver_lic-back" accept="image/*" required></input>
+              <p class="error-modal ">This field is required.</p>
+            </span>
+          </div>
+
+          <span class="info-form__checkbox">
+            <p>By signing up, you agree to website's <span>Terms of Service</span> and <span>Privacy Policy</span>.</p>
+          </span>
+
+          <div class="reserve-button">
+            <button type="submit" name="registration_button">Register</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Registration confirmation -->
+    <div class="registration-confirmation">
+      <div class="registration-confirmation__inner">
+        <div class="registration-confirmation__image">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+              <path d="M20 7L9.00004 18L3.99994 13" stroke="#000000" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round"></path>
+            </g>
+          </svg>
+        </div>
+        <div class="registration-confirmation__content">
+          <span class="registration-confirmation__title">Successfully registered</span>
+          <p class="registration-confirmation__message">Thank you for registering.
+            Your account has been created successfully!</p>
+        </div>
+        <div class="registration-confirmation__actions">
+          <button class="registration-confirmation__button" type="button">Confirm</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sign-in modals -->
+
+    <!-- Modal for asking email -->
+    <div class="sign-in-email__modal">
+      <div class="booking-modal__title">
+        <h2>Verification</h2>
+        <i onclick="closeModal();" class="fa-solid fa-xmark"></i>
+      </div>
+
+      <div class="registration-modal__message">
+        <h4>
+          <i class="fa-solid fa-circle-info"></i>
+          Account does not exists
+        </h4>
+      </div>
+
+      <div class="payment-modal__person-info">
+        <h4>Please enter the email to verify your account</h4>
+        <form class="sign-in__form" action="" method="post">
+          
+          <div class="info-form__1col">
+            <span>
+              <label for="email">
+                Email <b>*</b>
+              </label>
+              <input id="email" type="email" name="email" placeholder="Enter your email address" required></input>
+              <p class="error-modal">This field is required.</p>
+            </span>
+          </div>
+
+          <div class="reserve-button">
+            <button type="submit" name="sign-in__email--btn">Send</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Modal to enter OTP code -->
+    <div class="sign-in__modal">
+      <div class="booking-modal__title">
+        <h2>Verification</h2>
+        <i onclick="closeModal();" class="fa-solid fa-xmark"></i>
+      </div>
+      
+      <div class="registration-modal__message">
+        <h4>
+          <i class="fa-solid fa-circle-info"></i>
+          <span>The entered code is not correct</span>
+        </h4>
+      </div>
+
+      <div class="payment-modal__person-info">
+        <h4>Please enter the one time password
+          to verify your account</h4>
+        <p class="sign-in__email">
+          A code has been sent to <span>example@gmail.com</span>
+        </p>
+        <form class="sign-in__form" action="" method="post">
+          
+          <div id="otp" class="sign-in__inputs">
+            <input type="number" id="code_1" name="code_1" maxlength="1" required />
+            <input type="number" id="code_2" name="code_2" maxlength="1" required />
+            <input type="number" id="code_3" name="code_3" maxlength="1" required />
+            <input type="number" id="code_4" name="code_4" maxlength="1" required />
+          </div>
+
+          <div class="reserve-button">
+            <button type="submit" name="sign-in__OTP--btn">Verify</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Main page -->
+    <section id="home" class="hero-section">
+      <div class="container">
+        <img class="bg-shape" src="{% static 'images/hero/hero-bg.png' %}" alt="bg-shape" />
+        <div class="hero-content">
+          <div class="hero-content__text">
+            <h4>Plan your trip now</h4>
+            <h1>
+              Save <span>big</span> with our car rental
+            </h1>
+            <p>
+              Rent the car of your dreams. Unbeatable prices, unlimited miles,
+              flexible pick-up options and much more.
+            </p>
+            <div class="hero-content__text__btns">
+              <a onclick="bookBtn();" class="hero-content__text__btns__book-ride">
+                Book Ride &nbsp; <i class="fa-solid fa-circle-check"></i>
+              </a>
+              <a onclick="scrollToPlan();" class="hero-content__text__btns__learn-more">
+                Learn More &nbsp; <i class="fa-solid fa-angle-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <img src="{% static 'images/hero/main-car.png' %}" alt="car-img" class="hero-content__car-img" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Booking the car -->
+    <section id="booking-section" class="book-section">
+      <div onclick="closeModal();" class="modal-overlay"></div>
+
+      <div class="container">
+        <div class="book-content">
+          <div class="book-content__box">
+            <h2>Book a car</h2>
+
+            <p class="error-message">
+              All fields required!
+              <i onclick="errorMsg.style.display = 'none'" class="fa-solid fa-xmark"></i>
+            </p>
+
+            <p class="booking-done">
+              Check your email to confirm an order.
+              <i onclick="hideMessage();" class="fa-solid fa-xmark"></i>
+            </p>
+
+            <form class="box-form">
+              
+              <div class="box-form__car-type">
+                <label>
+                  <i class="fa-solid fa-car"></i> &nbsp; Select Your Car
+                  Type <b>*</b>
+                </label>
+                <select onchange="handleCar();" name="car-type">
+                  <option>Select your car type</option>
+                </select>
+              </div>
+
+              <div class="box-form__car-type">
+                <label>
+                  <i class="fa-solid fa-location-dot"></i> &nbsp; Pick-up
+                  <b>*</b>
+                </label>
+                <select onchange="handlePick();" name="pickup-city">
+                  <option>Select pick up location</option>
+                </select>
+              </div>
+
+              <div class="box-form__car-type">
+                <label>
+                  <i class="fa-solid fa-location-dot"></i> &nbsp; Drop-off
+                  <b>*</b>
+                </label>
+                <select onchange="handleDrop();" name="dropoff-city">
+                  <option>Select drop off location</option>
+                </select>
+              </div>
+
+              <div class="box-form__car-time">
+                <label htmlFor="picktime">
+                  <i class="fa-regular fa-calendar-days "></i> &nbsp;
+                  Pick-up <b>*</b>
+                </label>
+                <input id="picktime" onchange="handlePickTime();" name="picktime" min="" type="date"></input>
+              </div>
+
+              <div class="box-form__car-time">
+                <label htmlFor="droptime">
+                  <i class="fa-regular fa-calendar-days "></i> &nbsp;
+                  Drop-off <b>*</b>
+                </label>
+                <input id="droptime" onchange="handleDropTime();" name="droptime" min="" type="date"></input>
+              </div>
+
+              <button onclick="openModal();" name="search_button" type="submit">
+                Search
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal for booking -->
+    <div class="booking-modal">
+      <div class="booking-modal__title">
+        <h2>Complete Reservation</h2>
+        <i onclick="closeModal();" class="fa-solid fa-xmark"></i>
+      </div>
+      <div class="booking-modal__message">
+        <h4>
+          <i class="fa-solid fa-circle-info"></i> Upon completing this
+          reservation enquiry, you will receive:
+        </h4>
+        <p>
+          Your rental voucher to produce on arrival at the rental desk and a
+          toll-free customer support number.
+        </p>
+      </div>
+
+      <!-- Car info -->
+      <div class="booking-modal__car-info">
+        <div class="dates-div">
+          <div class="booking-modal__car-info__dates">
+            <h5>Location & Date</h5>
+            <span>
+              <i class="fa-solid fa-location-dot"></i>
+              <div>
+                <h6>Pick-Up Date</h6>
+                <p>
+                  <!-- pickTime -->
+                </p>
+              </div>
+            </span>
+          </div>
+
+          <div class="booking-modal__car-info__dates">
+            <span>
+              <i class="fa-solid fa-location-dot"></i>
+              <div>
+                <h6>Drop-Off Date</h6>
+                <p>
+                  <!-- dropTime -->
+                </p>
+              </div>
+            </span>
+          </div>
+
+          <div class="booking-modal__car-info__dates">
+            <span>
+              <i class="fa-solid fa-calendar-days"></i>
+              <div>
+                <h6>Pick-Up Location</h6>
+                <p>
+                  <!-- pickUp -->
+                </p>
+              </div>
+            </span>
+          </div>
+
+          <div class="booking-modal__car-info__dates">
+            <span>
+              <i class="fa-solid fa-calendar-days"></i>
+              <div>
+                <h6>Drop-Off Location</h6>
+                <p>
+                  <!-- dropOff -->
+                </p>
+              </div>
+            </span>
+          </div>
+        </div>
+        <div class="booking-modal__car-info__model">
+          <h5>
+            <span>Car -</span>
+          </h5>
+          <img src="" alt="car_img" />
+        </div>
+      </div>
+      <!-- Personal info -->
+      <div class="booking-modal__person-info">
+        <h4>Order Confirmation</h4>
+        <form class="info-form">
+          <span class="info-form__checkbox">
+            <input type="checkbox"></input>
+            <p>Please send me latest news and updates</p>
+          </span>
+
+          <div class="reserve-button">
+            <button type="submit" name="booking_button">Reserve Now</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+
+    <!-- Payment modal -->
+    <div class="payment-modal">
+      <div class="booking-modal__title">
+        <h2>Complete Reservation</h2>
+        <i onclick="closeModal();" class="fa-solid fa-xmark"></i>
+      </div>
+      <!-- Card -->
+      <div class="payment-modal__card">
+        <div class="card">
+          <div class="card__info">
+            <div class="card__logo">MasterCard</div>
+            <div class="card__chip">
+              <svg class="card__chip-lines" role="img" width="20px" height="20px" viewBox="0 0 100 100"
+                aria-label="Chip">
+                <g opacity="0.8">
+                  <polyline points="0,50 35,50" fill="none" stroke="#000" stroke-width="2">
+                  </polyline>
+                  <polyline points="0,20 20,20 35,35" fill="none" stroke="#000" stroke-width="2">
+                  </polyline>
+                  <polyline points="50,0 50,35" fill="none" stroke="#000" stroke-width="2">
+                  </polyline>
+                  <polyline points="65,35 80,20 100,20" fill="none" stroke="#000" stroke-width="2">
+                  </polyline>
+                  <polyline points="100,50 65,50" fill="none" stroke="#000" stroke-width="2">
+                  </polyline>
+                  <polyline points="35,35 65,35 65,65 35,65 35,35" fill="none" stroke="#000" stroke-width="2">
+                  </polyline>
+                  <polyline points="0,80 20,80 35,65" fill="none" stroke="#000" stroke-width="2">
+                  </polyline>
+                  <polyline points="50,100 50,65" fill="none" stroke="#000" stroke-width="2">
+                  </polyline>
+                  <polyline points="65,65 80,80 100,80" fill="none" stroke="#000" stroke-width="2">
+                  </polyline>
+                </g>
+              </svg>
+              <div class="card__chip-texture"></div>
+            </div>
+            <div class="card__type">debit</div>
+            <div class="card__number">
+              <span class="card__digit-group">0123</span>
+              <span class="card__digit-group">4567</span>
+              <span class="card__digit-group">8901</span>
+              <span class="card__digit-group">2345</span>
+            </div>
+            <div class="card__valid-thru" aria-label="Valid thru">Valid<br>thru</div>
+            <div class="card__exp-date"><time datetime="2038-01">01/38</time></div>
+            <div class="card__name" aria-label="Dee Stroyer">First Last</div>
+            <div class="card__vendor" role="img" aria-labelledby="card-vendor">
+              <span id="card-vendor" class="card__vendor-sr">Mastercard</span>
+            </div>
+            <div class="card__texture"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Payment info -->
+      <div class="payment-modal__person-info">
+        <h4>Payment Information</h4>
+        <form class="payment-form">
+          
+          <div class="info-form__1col">
+            <span>
+              <label for="cardnumber_field">
+                Card Number <b>*</b>
+              </label>
+              <input type="text" name="cardnumber_field" placeholder="0000 0000 0000 0000" minlength="19" maxlength="19"
+                id="cardnumber_field" required></input>
+              <p class="error-modal">This field is required.</p>
+            </span>
+          </div>
+
+          <div class="info-form__2col">
+            <span>
+              <label for="expiry_field">
+                Expiry Date <b>*</b>
+              </label>
+              <input type="text" name="expiry_field" placeholder="MM/YY" title="MM/YY" pattern="[0-9]{2}/[0-9]{2}"
+                maxlength="5" id="expiry_field" required></input>
+              <p class="error-modal">This field is required.</p>
+            </span>
+
+            <span>
+              <label for="cvv_field">
+                CVV Number <b>*</b>
+              </label>
+              <input type="password" name="cvv_field" placeholder="Card CVV" title="Only numbers" maxlength="3"
+                pattern="[0-9]{3}" id="cvv_field" required></input>
+              <p class="error-modal ">This field is required.</p>
+            </span>
+          </div>
+
+          <div class="reserve-button">
+            <p class="total-price">
+              <!-- Total Price -->
+            </p>
+            <button type="submit" name="payment_button">Checkout</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Payment Confirmation -->
+    <div class="loader"></div>
+    <div class="payment-confirmation">
+      <div class="payment-confirmation__inner">
+        <div class="payment-confirmation__image">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+              <path d="M20 7L9.00004 18L3.99994 13" stroke="#000000" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round"></path>
+            </g>
+          </svg>
+        </div>
+        <div class="payment-confirmation__content">
+          <span class="payment-confirmation__title">Order validated</span>
+          <p class="payment-confirmation__message">Thank you for your order. Your car will be ready for
+            pickup on the date you have specified.</p>
+        </div>
+        <div class="payment-confirmation__actions">
+          <button class="payment-confirmation__button" type="button">Confirm</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Plan your trip -->
+    <section class="plan-section">
+      <div class="container">
+        <div class="plan-container">
+          <div class="plan-container__title">
+            <h3>Plan your trip now</h3>
+            <h2>Quick & easy car rental</h2>
+          </div>
+
+          <div class="plan-container__boxes">
+            <div class="plan-container__boxes__box">
+              <img src="{% static 'images/plan/icon1.png' %}" alt="icon_img" />
+              <h3>Select Car</h3>
+              <p>
+                We offers a big range of vehicles for all your driving needs.
+                We have the perfect car to meet your needs
+              </p>
+            </div>
+
+            <div class="plan-container__boxes__box">
+              <img src="{% static 'images/plan/icon2.png' %}" alt="icon_img" />
+              <h3>Contact Operator</h3>
+              <p>
+                Our knowledgeable and friendly operators are always ready to
+                help with any questions or concerns
+              </p>
+            </div>
+
+            <div class="plan-container__boxes__box">
+              <img src="{% static 'images/plan/icon3.png' %}" alt="icon_img" />
+              <h3>Let's Drive</h3>
+              <p>
+                Whether you're hitting the open road, we've got you covered
+                with our wide range of cars
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pick car -->
+    <section class="pick-section">
+      <div class="container">
+        <div class="pick-container">
+          <div class="pick-container__title">
+            <h3>Vehicle Models</h3>
+            <h2>Our rental fleet</h2>
+            <p>
+              Choose from a variety of our amazing vehicles to rent for your
+              next adventure or business trip
+            </p>
+          </div>
+          <div class="pick-container__car-content">
+            <div class="pick-box">
+              <button class="colored-button" onclick="
+                setActive('FirstCar');
+              ">
+                Audi A1 S-Line
+              </button>
+              <button id="btn2" onclick="
+                setActive('SecondCar');
+              ">
+                VW Golf 6
+              </button>
+              <button id="btn3" onclick="
+                setActive('ThirdCar');
+              ">
+                Toyota Camry
+              </button>
+              <button id="btn4" onclick="
+                setActive('FourthCar');
+              ">
+                BMW 320 ModernLine
+              </button>
+              <button id="btn5" onclick="
+                setActive('FifthCar');
+              ">
+                Mercedes-Benz GLK
+              </button>
+              <button id="btn6" onclick="
+                setActive('SixthCar');
+              ">
+                VW Passat CC
+              </button>
+            </div>
+
+            <template id="box-cars_template">
+              <div class="box-cars">
+                <div class="pick-car">
+                  <img style="display: block;" src="{% static 'images/cars-big/VW Golf 6.jpg' %}" alt="car_img" />
+                </div>
+
+                <div class="pick-description">
+                  <div class="pick-description__price">
+                    <span>37</span>/ rent per day
+                  </div>
+                  <div class="pick-description__table">
+                    <div class="pick-description__table__col">
+                      <span>Model</span>
+                      <span>Gold 6</span>
+                    </div>
+
+                    <div class="pick-description__table__col">
+                      <span>Mark</span>
+                      <span>Volkswagen</span>
+                    </div>
+
+                    <div class="pick-description__table__col">
+                      <span>Year</span>
+                      <span>2008</span>
+                    </div>
+
+                    <div class="pick-description__table__col">
+                      <span>Doors</span>
+                      <span>4/5</span>
+                    </div>
+
+                    <div class="pick-description__table__col">
+                      <span>AC</span>
+                      <span>Yes</span>
+                    </div>
+
+                    <div class="pick-description__table__col">
+                      <span>Transmission</span>
+                      <span>Manual</span>
+                    </div>
+
+                    <div class="pick-description__table__col">
+                      <span>Fuel</span>
+                      <span>Diesil</span>
+                    </div>
+                  </div>
+                  <a class="cta-btn" onclick="bookBtn();">
+                    Reserve Now
+                  </a>
+                </div>
+              </div>
+            </template>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Banner -->
+    <section class="banner-section">
+      <div class="container">
+        <div class="banner-content">
+          <div class="banner-content__text">
+            <h2>Save big with our cheap car rental!</h2>
+            <p>
+              Top Airports. Local Suppliers. <span>24/7</span> Support.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Choose Us -->
+    <section class="choose-section">
+      <div class="container">
+        <div class="choose-container">
+          <img class="choose-container__img" src="{% static 'images/chooseUs/main.png' %}" alt="car_img" />
+          <div class="text-container">
+            <div class="text-container__left">
+              <h4>Why Choose Us</h4>
+              <h2>Best valued deals you will ever find</h2>
+              <p>
+                Read our clients' testimonies to see the difference we've made in their lives. 
+                After using our service and seeing the outcomes, our clients are ready to tell 
+                you about their pleasant experiences.
+              </p>
+              <a onclick="window.scrollTo(0, 0);">
+                Find Details &nbsp;
+                <i class="fa-solid fa-angle-right"></i>
+              </a>
+            </div>
+            <div class="text-container__right">
+              <div class="text-container__right__box">
+                <img src="{% static 'images/chooseUs/icon1.png' %}" alt="car-img" />
+                <div class="text-container__right__box__text">
+                  <h4>Cross Country Drive</h4>
+                  <p>
+                    With our top-notch automobiles for your cross-country trips, 
+                    take your driving to the next level.
+                  </p>
+                </div>
+              </div>
+              <div class="text-container__right__box">
+                <img src="{% static 'images/chooseUs/icon2.png' %}" alt="coin-img" />
+                <div class="text-container__right__box__text">
+                  <h4>All Inclusive Pricing</h4>
+                  <p>
+                    Get everything you need in one convenient, transparent
+                    price with our all-inclusive pricing policy.
+                  </p>
+                </div>
+              </div>
+              <div class="text-container__right__box">
+                <img src="{% static 'images/chooseUs/icon3.png' %}" alt="coin-img" />
+                <div class="text-container__right__box__text">
+                  <h4>No Hidden Charges</h4>
+                  <p>
+                    Enjoy peace of mind with our no hidden charges policy. We
+                    believe in transparent and honest pricing.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials-section">
+      <div class="container">
+        <div class="testimonials-content">
+          <div class="testimonials-content__title">
+            <h4>Reviewed by People</h4>
+            <h2>Client's Testimonials</h2>
+            <p>
+              Discover the positive impact we've made on the our clients by
+              reading through their testimonials. Our clients have experienced
+              our service and results, and they're eager to share their
+              positive experiences with you.
+            </p>
+          </div>
+
+          <div class="all-testimonials">
+            <div class="all-testimonials__box">
+              <span class="quotes-icon">
+                <i class="fa-solid fa-quote-right"></i>
+              </span>
+              <p>
+                "We rented a car from this website and had an amazing
+                experience! The booking was easy and the rental rates were
+                very affordable. "
+              </p>
+              <div class="all-testimonials__box__name">
+                <div class="all-testimonials__box__name__profile">
+                  <img src="{% static 'images/testimonials/pfp1.jpg' %}" alt="user_img" />
+                  <span>
+                    <h4>Parry Hotter</h4>
+                    <p>Almaty</p>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div class="all-testimonials__box box-2">
+              <span class="quotes-icon">
+                <i class="fa-solid fa-quote-right"></i>
+              </span>
+              <p>
+                "The car was in great condition and made our trip even better.
+                Highly recommend for this car rental website!"
+              </p>
+              <div class="all-testimonials__box__name">
+                <div class="all-testimonials__box__name__profile">
+                  <img src="{% static 'images/testimonials/pfp2.jpg' %}" alt="user_img" />
+                  <span>
+                    <h4>Ron Rizzly</h4>
+                    <p>Astana</p>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- FAQ -->
+    <section class="faq-section">
+      <div class="container">
+        <div class="faq-content">
+          <div class="faq-content__title">
+            <h5>FAQ</h5>
+            <h2>Frequently Asked Questions</h2>
+            <p>
+              Frequently Asked Questions About the Car Rental Booking Process
+              on Our Website: Answers to Common Concerns and Inquiries.
+            </p>
+          </div>
+
+          <div class="all-questions">
+            <div class="faq-box" id="q1">
+              <div class="faq-box__question active-question">
+                <p>1. What is special about comparing rental car deals?</p>
+                <i class="fa-solid fa-angle-down"></i>
+              </div>
+              <div class="faq-box__answer active-answer">
+                Comparing rental vehicle deals is crucial because it enables you to 
+                locate the greatest offer that meets your needs and budget, ensuring 
+                that you get the most for your money. You can locate bargains that provide 
+                lower pricing, more services, or better car models by contrasting several 
+                possibilities. By doing some online research and comparing costs from several 
+                rental providers, you might find great bargains on car rentals.
+              </div>
+            </div>
+            <div class="faq-box" id="q2">
+              <div class="faq-box__question">
+                <p>2. How do I find the car rental deals?</p>
+                <i class="fa-solid fa-angle-down"></i>
+              </div>
+              <div class="faq-box__answer">
+                By doing some online research and comparing costs from several rental providers, 
+                you might find great bargains on car rentals. You may compare costs and browse 
+                rental possibilities on websites like Expedia, Kayak, and Travelocity. To stay 
+                updated on any special offers or promotions, it is also advised to subscribe to 
+                email newsletters and follow rental car providers on social media.
+              </div>
+            </div>
+            <div class="faq-box" id="q3">
+              <div class="faq-box__question">
+                <p>3. How do I find such low rental car prices?</p>
+                <i class="fa-solid fa-angle-down"></i>
+              </div>
+              <div class="faq-box__answer">
+                Reserve in advance: It's frequently cheaper to reserve your rental car in advance. 
+                Compare costs among different vendors: To compare rates from several rental vehicle 
+                companies, use websites like Kayak, Expedia, or Travelocity. Look for coupons and 
+                discount codes: Look for coupons and discount codes that you can use to reduce the 
+                rental cost. There are occasions when renting from a place farther from the airport is 
+                less expensive.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Download -->
+    <section class="download-section">
+      <div class="container">
+        <div class="download-text">
+          <h2>Download our app to get most out of it</h2>
+          <p>
+            Unlock extraordinary capabilities and optimize your experience with our cutting-edge mobile app.
+          </p>
+          <div class="download-text__btns">
+            <img alt="download_img" src="{% static 'images/download/googleapp.svg' %}" />
+            <img alt="download_img" src="{% static 'images/download/appstore.svg' %}" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+  {% endblock %}
+  {% block javascript %}
+    <script src="{% static 'js/base.js' %}"></script>
+    <script src="{% static 'js/car_info.js' %}"></script>
+    <script src="{% static 'js/registration.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+  {% endblock %}

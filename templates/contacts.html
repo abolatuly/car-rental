@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Contacts</title>
+{% endblock %}
+
+{% block content %}
+        <section class="contact-page">
+            
+            <section class="hero-pages">
+                <div class="hero-pages__overlay"></div>
+                <div class="container">
+                    <div class="hero-pages__text">
+                        <h3>Contacts</h3>
+                        <p>
+                            <a href="{% url 'index' %}">Home</a> / Contacts
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <div class="container">
+                <div class="contact-div">
+                    <div class="contact-div__text">
+                        <h2>Need additional information?</h2>
+                        <p>
+                            A multifaceted professional skilled in multiple fields of
+                            research, development as well as a learning specialist. Over 15
+                            years of experience.
+                        </p>
+                        <a href="tel:123456789">
+                            <i class="fa-solid fa-phone"></i>&nbsp; (123) 456-7869
+                        </a>
+                        <a href="mailto:rentalcarkz@gmail.com>
+                            <i class="fa-solid fa-envelope"></i>&nbsp;
+                            rentalcarkz@gmail.com
+                        </a>
+                        <a href="/">
+                            <i class="fa-solid fa-location-dot"></i>&nbsp; Astana,
+                            Kazakhstan
+                        </a>
+                    </div>
+                    <div class="contact-div__form">
+                        <form>
+                            <label for="fullname">
+                                Full Name <b>*</b>
+                            </label>
+                            <input id="fullname" type="text" placeholder='E.g: "John Doe"'></input>
+
+                            <label for="email">
+                                Email <b>*</b>
+                            </label>
+                            <input id="email" type="email" placeholder="youremail@example.com"></input>
+
+                            <label for="textarea">
+                                Tell us about it <b>*</b>
+                            </label>
+                            <textarea id="textarea" placeholder="Write Here.."></textarea>
+
+                            <button type="submit">
+                                <i class="fa-solid fa-envelope-open-text"></i>&nbsp; Send
+                                Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="book-banner">
+                <div class="book-banner__overlay"></div>
+                <div class="container">
+                    <div class="text-content">
+                        <h2>Book a car by getting in touch with us</h2>
+                        <span>
+                            <i class="fa-solid fa-phone"></i>
+                            <h3>(123) 456-7869</h3>
+                        </span>
+                    </div>
+                </div>
+            </div>
+{% endblock %}
+
+{% block javascript %}
+    <script src="{% static 'js/base.js' %}"></script>
+{% endblock %}

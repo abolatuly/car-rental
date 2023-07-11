@@ -9,4 +9,3 @@ class RentalCenterViewSet(mixins.ActionSerializerMixin, ModelViewSet):
     }
     serializer_class = serializers.RentalCenterSerializer
     queryset = models.RentalCenter.objects.prefetch_related('cars')
-    permission_classes = permissions.IsAdminOrReadOnly,

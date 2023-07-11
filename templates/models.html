@@ -1,0 +1,298 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Vehicle models</title>
+{% endblock %}
+
+{% block content %}
+        <section class="models-section">
+            <section class="hero-pages">
+                <div class="hero-pages__overlay"></div>
+                <div class="container">
+                    <div class="hero-pages__text">
+                        <h3>Vehicle Models</h3>
+                        <p>
+                            <a href="{% url 'index' %}">Home</a> / Vehicle Models
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <div class="container">
+                <div class="models-div">
+                    <div class="models-div__box">
+                        <div class="models-div__box__img">
+                            <img src="{% static 'images/cars-big/audi-box.png' %}" alt="car_img" />
+                            <div class="models-div__box__descr">
+                                <div class="models-div__box__descr__name-price">
+                                    <div class="models-div__box__descr__name-price__name">
+                                        <p>Audi A1</p>
+                                        <span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                    </div>
+                                    <div class="models-div__box__descr__name-price__price">
+                                        <h4>$45</h4>
+                                        <p>per day</p>
+                                    </div>
+                                </div>
+                                <div class="models-div__box__descr__name-price__details">
+                                    <span>
+                                        <i class="fa-solid fa-car-side"></i> &nbsp; Audi
+                                    </span>
+                                    <span style="text-align: right;">
+                                        4/5 &nbsp; <i class="fa-solid fa-car-side"></i>
+                                    </span>
+                                    <span>
+                                        <i class="fa-solid fa-car-side"></i> &nbsp; Manual
+                                    </span>
+                                    <span style="text-align: right;">
+                                        Diesel &nbsp; <i class="fa-solid fa-car-side"></i>
+                                    </span>
+                                </div>
+                                <div class="models-div__box__descr__name-price__btn">
+                                    <a href="">
+                                        Book Ride
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="models-div__box">
+                        <div class="models-div__box__img">
+                            <img src="{% static 'images/cars-big/golf6-box.png' %}" alt="car_img" />
+                            <div class="models-div__box__descr">
+                                <div class="models-div__box__descr__name-price">
+                                    <div class="models-div__box__descr__name-price__name">
+                                        <p>Golf 6</p>
+                                        <span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                    </div>
+                                    <div class="models-div__box__descr__name-price__price">
+                                        <h4>$37</h4>
+                                        <p>per day</p>
+                                    </div>
+                                </div>
+                                <div class="models-div__box__descr__name-price__details">
+                                    <span>
+                                        <i class="fa-solid fa-car-side"></i> &nbsp; VW
+                                    </span>
+                                    <span style="text-align: right;">
+                                        4/5 &nbsp; <i class="fa-solid fa-car-side"></i>
+                                    </span>
+                                    <span>
+                                        <i class="fa-solid fa-car-side"></i> &nbsp; Manual
+                                    </span>
+                                    <span style="text-align: right;">
+                                        Diesel &nbsp; <i class="fa-solid fa-car-side"></i>
+                                    </span>
+                                </div>
+                                <div class="models-div__box__descr__name-price__btn">
+                                    <a href="">
+                                        Book Ride
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="models-div__box">
+                        <div class="models-div__box__img">
+                            <img src="{% static 'images/cars-big/toyota-box.png' %}" alt="car_img" />
+                            <div class="models-div__box__descr">
+                                <div class="models-div__box__descr__name-price">
+                                    <div class="models-div__box__descr__name-price__name">
+                                        <p>Toyota</p>
+                                        <span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                    </div>
+                                    <div class="models-div__box__descr__name-price__price">
+                                        <h4>$30</h4>
+                                        <p>per day</p>
+                                    </div>
+                                </div>
+                                <div class="models-div__box__descr__name-price__details">
+                                    <span>
+                                        <i class="fa-solid fa-car-side"></i> &nbsp; Camry
+                                    </span>
+                                    <span style="text-align: right;">
+                                        4/5 &nbsp; <i class="fa-solid fa-car-side"></i>
+                                    </span>
+                                    <span>
+                                        <i class="fa-solid fa-car-side"></i> &nbsp; Manual
+                                    </span>
+                                    <span style="text-align: right;">
+                                        Diesel &nbsp; <i class="fa-solid fa-car-side"></i>
+                                    </span>
+                                </div>
+                                <div class="models-div__box__descr__name-price__btn">
+                                    <a href="">
+                                        Book Ride
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="models-div__box">
+                        <div class="models-div__box__img">
+                            <img src="{% static 'images/cars-big/bmw-box.png' %}" alt="car_img" />
+                            <div class="models-div__box__descr">
+                                <div class="models-div__box__descr__name-price">
+                                    <div class="models-div__box__descr__name-price__name">
+                                        <p>BMW 320</p>
+                                        <span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                    </div>
+                                    <div class="models-div__box__descr__name-price__price">
+                                        <h4>$35</h4>
+                                        <p>per day</p>
+                                    </div>
+                                </div>
+                                <div class="models-div__box__descr__name-price__details">
+                                    <span>
+                                        <i class="fa-solid fa-car-side"></i> &nbsp; ModernLine
+                                    </span>
+                                    <span style="text-align: right;">
+                                        4/5 &nbsp; <i class="fa-solid fa-car-side"></i>
+                                    </span>
+                                    <span>
+                                        <i class="fa-solid fa-car-side"></i> &nbsp; Manual
+                                    </span>
+                                    <span style="text-align: right;">
+                                        Diesel &nbsp; <i class="fa-solid fa-car-side"></i>
+                                    </span>
+                                </div>
+                                <div class="models-div__box__descr__name-price__btn">
+                                    <a href="">
+                                        Book Ride
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="models-div__box">
+                        <div class="models-div__box__img">
+                            <img src="{% static 'images/cars-big/benz-box.png' %}" alt="car_img" />
+                            <div class="models-div__box__descr">
+                                <div class="models-div__box__descr__name-price">
+                                    <div class="models-div__box__descr__name-price__name">
+                                        <p>Mercedes</p>
+                                        <span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                    </div>
+                                    <div class="models-div__box__descr__name-price__price">
+                                        <h4>$50</h4>
+                                        <p>per day</p>
+                                    </div>
+                                </div>
+                                <div class="models-div__box__descr__name-price__details">
+                                    <span>
+                                        <i class="fa-solid fa-car-side"></i> &nbsp; Benz GLK
+                                    </span>
+                                    <span style="text-align: right;">
+                                        4/5 &nbsp; <i class="fa-solid fa-car-side"></i>
+                                    </span>
+                                    <span>
+                                        <i class="fa-solid fa-car-side"></i> &nbsp; Manual
+                                    </span>
+                                    <span style="text-align: right;">
+                                        Diesel &nbsp; <i class="fa-solid fa-car-side"></i>
+                                    </span>
+                                </div>
+                                <div class="models-div__box__descr__name-price__btn">
+                                    <a href="">
+                                        Book Ride
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="models-div__box">
+                        <div class="models-div__box__img">
+                            <img src="{% static 'images/cars-big/passat-box.png' %}" alt="car_img" />
+                            <div class="models-div__box__descr">
+                                <div class="models-div__box__descr__name-price">
+                                    <div class="models-div__box__descr__name-price__name">
+                                        <p>VW Passat</p>
+                                        <span>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                    </div>
+                                    <div class="models-div__box__descr__name-price__price">
+                                        <h4>$25</h4>
+                                        <p>per day</p>
+                                    </div>
+                                </div>
+                                <div class="models-div__box__descr__name-price__details">
+                                    <span>
+                                        <i class="fa-solid fa-car-side"></i> &nbsp; Volkswagen
+                                    </span>
+                                    <span style="text-align: right;">
+                                        4/5 &nbsp; <i class="fa-solid fa-car-side"></i>
+                                    </span>
+                                    <span>
+                                        <i class="fa-solid fa-car-side"></i> &nbsp; Manual
+                                    </span>
+                                    <span style="text-align: right;">
+                                        Diesel &nbsp; <i class="fa-solid fa-car-side"></i>
+                                    </span>
+                                </div>
+                                <div class="models-div__box__descr__name-price__btn">
+                                    <a href="">
+                                        Book Ride
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="book-banner">
+                <div class="book-banner__overlay"></div>
+                <div class="container">
+                    <div class="text-content">
+                        <h2>Book a car by getting in touch with us</h2>
+                        <span>
+                            <i class="fa-solid fa-phone"></i>
+                            <h3>(123) 456-7869</h3>
+                        </span>
+                    </div>
+                </div>
+            </div>
+{% endblock %}
+
+{% block javascript %}
+    <script src="{% static 'js/base.js' %}"></script>
+{% endblock %}

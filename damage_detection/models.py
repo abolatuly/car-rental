@@ -10,8 +10,8 @@ from . import choices
 
 
 def car_image_path(instance, filename):
-    return os.path.join(f'car_damage_detection/{instance.order.user}',
-                        f'{timezone.now().strftime("%Y-%m-%d")}_{filename}')
+    return os.path.join(f'car_damage_detection/{instance.order.user}/{timezone.now().strftime("%Y-%m-%d")}'
+                        f',{filename}')
 
 
 class DamageDetection(models.Model):
