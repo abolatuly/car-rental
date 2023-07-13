@@ -1,5 +1,5 @@
 const createWebSocketForOrder = (order_id) => {
-    const socket = new WebSocket(`ws://127.0.0.1:8000/ws/orders/${order_id}/`);
+    const socket = new WebSocket(`ws://127.0.0.1:9000/ws/orders/${order_id}/`);
 
     socket.onmessage = function (event) {
         const order_status = JSON.parse(event.data).status;

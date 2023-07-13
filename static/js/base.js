@@ -57,7 +57,6 @@ api.interceptors.request.use(
       } catch (error){
         console.error(error);
       }
-
       // Add the access token to the request headers
       config.headers.Authorization = `Bearer ${access}`;
 

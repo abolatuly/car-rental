@@ -3,6 +3,8 @@ import os
 from datetime import timedelta
 from pathlib import Path
 
+import dj_database_url
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -92,10 +94,9 @@ ASGI_APPLICATION = 'src.asgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': dj_database_url.config(
+        default='postgres://postgres:qwerty123@carrental-db:5432/postgres',
+    ),
 }
 
 
@@ -163,7 +164,7 @@ SIMPLE_JWT = {
 CACHES = {
     'default': {
         'BACKEND': 'django_redis.cache.RedisCache',
-        'LOCATION': 'redis://127.0.0.1:6379/1',
+        'LOCATION': 'redis://carrental-redis:6379/1',
         'OPTIONS': {
             'CLIENT_CLASS': 'django_redis.client.DefaultClient',
         }
@@ -192,7 +193,7 @@ CHANNEL_LAYERS = {
         'BACKEND': 'channels_redis.pubsub.RedisPubSubChannelLayer',
         'CONFIG': {
             # 'hosts': [('127.0.0.1', 6379)],
-            'hosts': ['redis://127.0.0.1:6379'],
+            'hosts': [('carrental-redis', 6379)],
         },
     },
 }
@@ -204,11 +205,12 @@ CHANNEL_LAYERS = {
 
 CORS_ALLOW_ALL_ORIGINS = True
 
-CELERY_BROKER_URL = 'redis://localhost:6379'
-CELERY_RESULT_BACKEND = 'redis://localhost:6379'
+CELERY_BROKER_URL = 'redis://carrental-redis:6379'
+CELERY_RESULT_BACKEND = 'redis://carrental-redis:6379'
 CELERY_ACCEPT_CONTENT = ['application/json']
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
+CELERY_IMPORTS = ('users.tasks', )
 
 LOGGING = {
     'version': 1,
