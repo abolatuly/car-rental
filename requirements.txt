@@ -70,7 +70,6 @@ sympy==1.11.1
 torch==2.0.0
 torchaudio==2.0.1
 torchvision==0.15.1
-Twisted==22.10.0
 txaio==23.1.1
 typing_extensions==4.5.0
 uritemplate==4.1.1
